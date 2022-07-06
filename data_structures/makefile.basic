@@ -1,0 +1,60 @@
+HEADER_INCLUDE_DIRECTORY := /usr/include
+LIBRARY_INSTALLATION_DIRECTORY := /usr/lib
+LIBRARY := libsubham_ds.so
+HEADER := subham_ds.h
+LIBCOMMAND := subham_ds
+HEADER_INSTALLATION_DIRECTORY := /usr/include/$(LIBCOMMAND)
+CLEAR := rm -f
+
+install: $(LIBRARY) llist.h stack.h queue.h heap.h union_find.h $(HEADER)
+	@sudo cp $(LIBRARY) $(LIBRARY_INSTALLATION_DIRECTORY)
+	@sudo ldconfig
+	@sudo ldconfig -p | grep $(LIBCOMMAND)
+	@echo ld configured successfully
+	@echo $(LIBRARY) is the shared object library and is installed in $(LIBRARY_INSTALLATION_DIRECTORY)
+	@sudo mkdir -p $(HEADER_INSTALLATION_DIRECTORY)
+	@sudo cp llist.h stack.h queue.h heap.h union_find.h $(HEADER_INSTALLATION_DIRECTORY)
+	@sudo cp $(HEADER) $(HEADER_INCLUDE_DIRECTORY)
+	@echo Header files successfully installed
+	@echo The header file for using this library is $(HEADER)
+	@echo "Job done :)"
+	@echo For cleaning type command make -f makefile.basic clean
+	@echo If you wish to uninstall that is revert back changes done to your system type command make -f makefile.basic uninstall
+
+$(LIBRARY): llist.o stack.o queue.o heap.o union_find.o
+	@gcc -shared -o $(LIBRARY) llist.o stack.o queue.o heap.o union_find.o
+	@echo shared library $(LIBRARY) created
+
+llist.o: llist.h llist.c
+	@gcc -Wall -fPIC -c llist.c
+	@echo llist.o created
+
+stack.o: stack.h stack.h
+	@gcc -Wall -fPIC -c stack.c
+	@echo stack.o created
+
+queue.o: queue.h queue.c
+	@gcc -Wall -fPIC -c queue.c
+	@echo queue.o created
+
+heap.o: heap.h heap.c
+	@gcc -Wall -fPIC -c heap.c
+	@echo heap.o created
+
+union_find.o: union_find.h union_find.c
+	@gcc -Wall -fPIC -c union_find.c
+	@echo union_find.o created
+
+clean:
+	@$(CLEAR) *.o
+	@$(CLEAR) *.c
+	@$(CLEAR) *.h
+	@$(CLEAR) *.basic
+	echo "Everything is cleared! :)"
+
+uninstall:
+	@sudo $(CLEAR) -r $(HEADER_INSTALLATION_DIRECTORY)
+	@sudo $(CLEAR) $(HEADER_INCLUDE_DIRECTORY)/$(HEADER)
+	@sudo $(CLEAR) $(LIBRARY_INSTALLATION_DIRECTORY)/$(LIBRARY)
+	@sudo ldconfig
+	@echo "Uninstallation done successfully! :)"
