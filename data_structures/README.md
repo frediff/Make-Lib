@@ -47,3 +47,12 @@
 with the smaller number of nodes is made a subtree of the tree with the larger number of nodes.
 
 *The `UNION_FIND` data structure is to be implemented in the C file `union_find.c`.*
+
+The individual data structures also provide a deallocation routine as follows:
+For linked-list: `LLIST deallocateList(LLIST)`
+For stack: `STACK deallocateStack(STACK)`
+For queue: `QUEUE deallocateQueue(QUEUE)`
+For heap: `HEAP deallocateHeap(HEAP)`
+For union-find: `UNION_FIND deallocateUF(UNION_FIND)`
+
+***Always make sure that the `makefile` is run with root permission.***
