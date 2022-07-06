@@ -47,10 +47,7 @@ union_find.o: union_find.h union_find.c
 
 clean:
 	@$(CLEAR) *.o
-	@$(CLEAR) *.c
-	@$(CLEAR) *.h
-	@$(CLEAR) *.basic
-	echo "Everything is cleared! :)"
+	echo "Object files are cleared! :)"
 
 uninstall:
 	@sudo $(CLEAR) -r $(HEADER_INSTALLATION_DIRECTORY)
