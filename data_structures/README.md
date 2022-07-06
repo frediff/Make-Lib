@@ -14,7 +14,7 @@
 *The `LLIST` data structure is implemented in the C file [`llist.c`](llist.c).*
 
 - `STACK`: Data type for a stack implemented using the LLIST data structure. The `STACK` type supports the following functions:
-    - `STACK createStack(): Creates an empty stack, and returns it.
+    - `STACK createStack()`: Creates an empty stack, and returns it.
     - `int isEmptyStack(STACK S)`: Returns `1` if the stack `S` is empty, `0` otherwise.
     - `STACK push(STACK S, int k)`: Pushes a value `k` in the stack `S`, and returns the new stack.
     - `STACK pop(STACK S, int *k)`: Pops the top element from the stack, and returns that element using the pointer `k`. Returns the new stack as the return value.
