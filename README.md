@@ -19,7 +19,7 @@
     - `make -f ./graph/makefile.graph uninstall`
 
 ### Steps to clean the object files
-- Head over to the directory where the the folders data_structures, graph and application are present and open the terminal.
+- Head over to the directory where the the folders `data_structures`, `graph` and `application` are present and open the terminal.
 - Now type the following commands one by one,
     - `make -f ./data_structures/makefile.basic clean`
     - `make -f ./graph/makefile.graph clean`
