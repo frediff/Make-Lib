@@ -1,0 +1,36 @@
+HEADER_INCLUDE_DIRECTORY := /usr/include
+LIBRARY_INSTALLATION_DIRECTORY := /usr/lib
+LIBRARY := libsubham_graph.a
+HEADER := graph.h
+LIBCOMMAND := subham_graph
+CLEAR := rm -f
+
+install: $(LIBRARY) $(HEADER)
+	@sudo cp $(LIBRARY) $(LIBRARY_INSTALLATION_DIRECTORY)
+	@echo $(LIBRARY) is the static library and is installed in $(LIBRARY_INSTALLATION_DIRECTORY)
+	@sudo cp $(HEADER) $(HEADER_INCLUDE_DIRECTORY)
+	@echo Header files successfully installed
+	@echo The header file for using this library is $(HEADER)
+	@echo "Job done :)"
+	@echo For cleaning type command make -f makefile.graph clean
+	@echo If you wish to uninstall that is revert back changes done to your system type command make -f makefile.graph uninstall
+
+$(LIBRARY): graph.o
+	@ar rcs $(LIBRARY) graph.o
+	@echo library $(LIBRARY) created
+
+graph.o: graph.c graph.h
+	@gcc -Wall -c graph.c
+	@echo graph.o created
+
+clean:
+	@$(CLEAR) *.o
+	@$(CLEAR) *.c
+	@$(CLEAR) *.h
+	@$(CLEAR) *.graph
+	echo "Everything is cleared! :)"
+
+uninstall:
+	@sudo $(CLEAR) $(HEADER_INCLUDE_DIRECTORY)/$(HEADER)
+	@sudo $(CLEAR) $(LIBRARY_INSTALLATION_DIRECTORY)/$(LIBRARY)
+	@echo "Uninstallation done successfully! :)"
