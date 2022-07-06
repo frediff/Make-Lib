@@ -55,4 +55,5 @@ The individual data structures also provide a deallocation routine as follows:
 - For heap: `HEAP deallocateHeap(HEAP)`
 - For union-find: `UNION_FIND deallocateUF(UNION_FIND)`
 
+***The installation dependencies are present in `makefile.basic`.***
 ***Always make sure that the `makefile` is run with root permission.***
