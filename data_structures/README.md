@@ -43,5 +43,7 @@
     - `UNION_FIND createUF(int n)`: Creates a `UNION_FIND` data structure that can store `n` node pointers. Initially, all these pointers are `NULL`.
     - `UNION_FIND makeSetUF(UNION_FIND F, int x, int *i)`: Creates a singleton set (a node) for the element `x`, adds to `F` a pointer to that node, and returns the modified `UNION_FIND` structure. An `int` pointer is passed additionally to return the insertion index.
     - `NODE_PTR findUF(UNION_FIND F, int i)`: Returns the `ID` of the set to which the element pointed to by the `i`-th pointer in `F` belongs. The `ID` is a pointer to the root node of the tree containing that element. Make sure that the index `i` corresponding to the element being searched is known beforehand when this function is called.
-    - `void unionUF(UNION_FIND F, int i, int j)`: Merges the sets containing the elements pointed to by the `i`-th and the `j`-th pointers of `F`. Make sure again that the indices `i` and `j` corresponding to the elements are known beforehand when this function is called. The merging heuristic to be used is: The tree
+    - `void unionUF(UNION_FIND F, int i, int j)`: Merges the sets containing the elements pointed to by the `i`-th and the `j`-th pointers of `F`. Make sure again that the indices `i` and `j` corresponding to the elements are known beforehand when this function is called. The merging heuristic used is: The tree
 with the smaller number of nodes is made a subtree of the tree with the larger number of nodes.
+
+*The `UNION_FIND` data structure is to be implemented in the C file `union_find.c`.*
