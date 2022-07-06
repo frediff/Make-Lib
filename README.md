@@ -1,6 +1,6 @@
 # Make-Lib
  This is a repository containing the code for a basic data-structure and graph library.
-##### We need just a terminal for installing the library
+##### We need just a terminal for installing the library.
 
 ### Steps to install
 - First head over to the linux terminal.
