@@ -18,7 +18,7 @@ install: $(LIBRARY) llist.h stack.h queue.h heap.h union_find.h $(HEADER)
 	@echo Header files successfully installed
 	@echo The header file for using this library is $(HEADER)
 	@echo "Job done :)"
-	@echo For cleaning type command make -f makefile.basic clean
+	@echo For cleaning everything type command make -f makefile.basic clean
 	@echo If you wish to uninstall that is revert back changes done to your system type command make -f makefile.basic uninstall
 
 $(LIBRARY): llist.o stack.o queue.o heap.o union_find.o
