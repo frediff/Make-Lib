@@ -7,7 +7,7 @@ no corresponding edge exists in the graph, the entry stores 0. The `GRAPH` data 
 - `GRAPH readGraph(char *FName)`: Reads the nodes and edges of a graph from a file with name FName (assuming that the file always exists). The format of the file is specified later. The new graph is returned.
 - `void DFS(GRAPH G)`: Does a `DFS` traversal of the graph `G` using the `STACK` data type (in the dynamic library), and prints out the nodes in the `DFS` traversal order.
 - `void BFS(GRAPH G)`: Does a `BFS` traversal of the graph `G` using the `QUEUE` data type (in the dynamic library), and prints out the nodes in the `BFS` traversal order.
-- `void MST(GRAPH G)`: Computes the minimum spanning tree of the graph `G` using Kruskal’s algorithm. The function prints out the edges added to the tree (the two endpoints and the weight), each edge in a single line, followed by the weight of the MST in the last line. The function uses the `UNION_FIND` data structure of the dynamic library.
+- `void MST(GRAPH G)`: Computes the minimum spanning tree of the graph `G` using Kruskal’s algorithm. The function prints out the edges added to the tree (the two endpoints and the weight), each edge in a single line, followed by the weight of the `MST` in the last line. The function uses the `UNION_FIND` data structure of the dynamic library.
 
 ***The functions are implemented in the C file graph.c with an appropriate graph.h file added.***
 
