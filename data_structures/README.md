@@ -1,6 +1,6 @@
 # Data Structures Implementation
 
-#### This directory contains the implementation of some data structures and the make file to build and install a dynamic library out of it.
+#### This directory contains the implementation of some data structures and the make-file to build and install a dynamic library out of it.
 
 - `LLIST`: Data type for a singly linked list of `NODE`s. A `NODE` is a C structure with two fields, `val` (of type `int`) and `next` (of type pointer to `NODE`). The `LLIST` type supports the following functions:
     - `LLIST createList()`: Creates an empty linked list, and returns it
