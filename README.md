@@ -26,6 +26,6 @@
     
 ### For testing the library (in order to ensure correct implementation)
 - Head over to the application directory.
-- Create a text file and type the input of a graph in it. For the input format check the `README` file of the `application` directory.
+- Create a text file and type the input of a graph in it. For the input format check the `README` file of the `graph` directory.
 - After this run the executable and type in the file name (along with extension) of the text file you created.
 - You will see the DFS, BFS and MST of the graph printed on the console.
